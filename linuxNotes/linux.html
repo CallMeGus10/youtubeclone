@@ -1,0 +1,127 @@
+Why linux command matter?
+More Controll over machine
+Faster
+Available everywhere including windows
+To be a webdeveloper or other coding positions, you need to learn linux
+
+
+2 types of operating systems
+Microsoft
+Other systems like linux, mac, etc
+
+A shell is a compute interface to an operating system. he shell takes the command and give it to the operating system to perform
+
+
+Commands
+
+whoami : username
+man : manual for commands
+pwd : shows the directory working on
+ls : shows the list
+Options : -a shows all the files including hidden files
+                -l shows the long list of the file
+Cd : changes the directory
+Options : cd .. Changes to the previous dir
+                Cd ../ changes to the parent directory
+                 Cd ~ changes to home directory
+mkdir : makes a new directory
+Options : mkdir greenhouse/winter creates 2 folders
+                mkdir -p greenhouse/winter/seeds create a                   folder named seeds inside the folder winter                   inside the greenhouse
+touch : creates empty folder. We can make folder with . txt, . png, . img, etc
+If we create a touch folder which alredy exists it only update the folder with that name
+rmdir : removes empty directories(files). If the file we choosed to remove have a subdirectory it wont remove that directory  only the empty folders
+rm : removes empty directories just like rmdir.
+Options : rm -r dirname deletes the directory.
+                rm -ri gives a list of folders in the directory                    to select them to dlete or not by typing y or n
+                 rm -rv removes the folders in reverse order
+open : open lets you open the files. To open files in windows, you need to install 'sudo apt install xdg. Utils
+mv : rename the folder or move the files from one folder to another folder. 
+Options : mv blu blue lets you rename the file blu into                  blue
+                 mv blue dir/ moves the file blue to the                            folder dir
+cp : copies a file to another folder. We can copy a folder and its contents using -r
+head : prints the first few lines of a folder. 
+Options : head anime.txt -n 100 prints fist 100 lines
+tail : prints last few lines of the 
+Options : tail anime.txt -n 50
+Options : head/tail -f gives live update of the lines of file we selected
+Date : to show date
+Using this > symbol we can store the data into a folder
+Example : date > dir stores the date into the dir
+whoami >> dir
+date >> dir
+Pwd >> dir stores multiple data into dir
+cat : just like tail and head it prints the content of a folder, but it prints all the line of the folder unlike head and tail.
+Cat dir1 dir2 prints content of multuple folder 
+cat -n dir prints contents with number. So we can find the number of line we want
+Less : prints content of file according to need. Like cat. G for the end of line. g for front of line. We can search for words in the content with /.
+echo : prints what we type after command echo inside "  ". We can store them to a folder using > symbol
+Wc : prints how many lines, words, bytes are in a file.
+Piping : using | symbol is piping. We can sort or uniq after using pipe symbol
+Sort : sort the files content in revere, ascending order or numeric order, etc
+Uniq : like sort commaand. But it sort duplicate and non duplocated contents of a file
+Options: uniq -d sort duplicated lines
+               Uniq -u sort non duplicated lines
+Expansions : echo * prints all the names of directory
+echo *. text prints all the. txt files
+echo *.?? Prints the files with 2 characters after . example,  .js .py
+echo app. {py, html, css} prints app. py, app. html, app. css
+If we remove echo and add touch, it will create those files
+echo day{1..99} prints num from 1 to 99
+diff : find difference btw two directories
+find : find the word or contents we search.
+Options: find .  -name '*.js' searches for. Js files
+find .  -type d -name '*e*' searches for directories with letter e in it
+grep : finds the words and contents in line by line with number by using -nC, -n, -r
+du : to print size of data. -h for human understanding. -m for megabyte. -g for gigabyte. You can pipeline it with sort or uniq
+df : juat like du but prints data usage.
+history : to print the commands we run. Typing ! Symbol and a number from history executes that command
+ps : print status. Prints the running process
+top : to list the running process in real time
+Kill : the kill command interact with the running process and kills them by the number of lines
+Options : kill -9 num, sigkill
+killall : just like kill, it kill all the process
+jobs command is used to run or stop a process. Top is a process. It can be running in front by using fg and run in bg using bg. By pressing ctrl+z stops the process. Or it runs in the bgbor fg.
+gzip -k is used to compress a file into . g.zip. we can unzip it by removing the og file and use gzip -d filename or gunzip command.
+tar is used for extraction. 
+tar -cf archive.tar file1 file2 creates and copy the files into the archive.tar. then we can mkdir new folder and mv archive.tar into that folder. We can view the archive.tar by using tar -tf archive.tar
+We can extract the tar by using tar -xf archive.tar.
+To reduce the size of file, we can remove the files and gzip the archive.tar then gunzip it. Then use tar -xf archive.tar.
+nano : to edit text
+alias
+xargs : xargs acan be used as pipeline to remove or list a file
+ln : there are two types of links. Hardlinkand softlink. 
+ln original.txt hardlink.txt for hardlink. If you delete the original link the hardlink still store the same content of original link.
+ln -s original.txt hardlink.txt for softlink. If you dlete original link the symbolic link will lose the content of original link
+If we search for a folder tgee would be alot a files with that name appear. But if we use a symbolic link for important files, when we search for it we will manage to find it easily.
+who : lists the users ofthe system
+su : switch users
+sudo : super user do. To install new commands we can use sudo. If we cant edit a text using nano we can do it by using sudo.
+passwd : to change our password or change another users password under your system
+chown : used to change the ownership of a file. Using sudo we can change the ownership of a file to ours.
+Option : chown sudo owner filename
+Then you will access to edit only that file.
+Option : if you have a group and you want to make that group a ownership then,
+sudo chown owner:group filename
+Permissions in linux :
+If thefirst character of permission is - , it is a regular file, if it is d, it is a directory. If it is c, it is special character file. If it is l, it is symbolic link
+After the first word, there are 9 symbols in there. First 3 is the permission status for the owner, second 3 symbol is the permission for group, last 3 is for other users (world).
+r - read
+w : write 
+x - execute ( cd )
+' - ' no permission
+
+chmod : we can change the pemission settings of file by using vhmod command
+Options : chmod a+w filename gives permission to write to everyone. 
+a - all
+u - user
+g - group
+o - world
+
++ : add permission
+'-' : remove permission
+= : add permission and remove ither permissions
+
+r - read
+w : write 
+x - execute ( cd )
+' - ' no permission
